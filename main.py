@@ -18,10 +18,6 @@ class Production(BaseModel):
     price: float
     quantity: int
 
-
-app = FastAPI()
-
-
 @app.get("/productions/")
 async def create_production(production: Production, api_key:str=Security(api_key_query)):
     if api_key == API_KEY:
